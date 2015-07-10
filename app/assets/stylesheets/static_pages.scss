@@ -1,3 +1,27 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html,body,.wrap
+{
+  height: 100%;
+}
+.wrap
+{ height: auto;
+  min-height: 100%;
+}
+.content
+{
+  padding-bottom: 50px;
+
+
+}
+.footer
+{
+  position: relative;
+  margin-top: -60px; /* footer高度的负值 */
+  height:60px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+}
