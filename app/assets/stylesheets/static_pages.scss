@@ -13,8 +13,7 @@ html,body,.wrap
 .content
 {
   padding-bottom: 50px;
-
-
+  width: 100%;
 }
 .footer
 {
@@ -24,4 +23,62 @@ html,body,.wrap
   margin-bottom: 0;
   padding-bottom: 0;
 
+}
+
+.mycarousel .carousel-control
+{
+  background-image:none;
+}
+.mycarousel .carousel-indicators
+{
+  transform: translate(0,100px);
+}
+.mycarousel .carousel-indicators,
+.mycarousel .carousel-control
+{
+  opacity:0;
+  transition: opacity 1s ease-in-out,transform 1s ease-in-out;
+}
+.mycarousel .carousel-control.left
+{
+  transform: translate(-100px,0);
+}
+.mycarousel .carousel-control.right
+{
+  transform: translate(100px,0);
+}
+.mycarousel:hover .carousel-control
+{
+  transform: translate(0,0);
+  opacity: 1;
+  transition: opacity 1s ease-in-out,transform 1s ease-in-out;
+}
+.mycarousel:hover .carousel-indicators
+{
+  transform: translate(0,0);
+  opacity: 1;
+  transition: opacity 1s ease-in-out,transform 1s ease-in-out;
+}
+.mycarousel .item img
+{
+  width: 100%;
+  height: 300px;
+}
+.top-offset
+{
+  margin-top: 10px;
+
+}
+.bottom-offset
+{
+  margin-bottom: 10px;
+}
+
+.nopadding-left
+{
+  padding-left:0;
+}
+.nopadding-right
+{
+  padding:0;
 }
