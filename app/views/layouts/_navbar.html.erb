@@ -11,9 +11,9 @@
     </div>
     <nav id="bs-navbar" class="navbar-collapse collapse " aria-expanded="false">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "about", about_path %></li>
-        <li><%= link_to "Help", help_path %></li>
+        <li class="<%= 'active' if params[:action] == 'home' %>"><%= link_to "Home", root_path %></li>
+        <li class="<%= 'active' if params[:action] == 'about' %>"><%= link_to "about", about_path %></li>
+        <li class="<%= 'active' if params[:action] == 'help' %>"><%= link_to "Help", help_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Log in", '#' %></li>

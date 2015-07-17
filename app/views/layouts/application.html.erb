@@ -11,12 +11,12 @@
 </head>
 <body>
 <div class="wrap">
-  <%= render partial:'layouts/navbar',%>
+  <%= render partial: 'layouts/navbar' %>
   <div class="content">
-  <%= yield %>
+    <%= yield %>
   </div>
 </div>
-<%= render partial:'layouts/footer'%>
+<%= render partial: 'layouts/footer' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
