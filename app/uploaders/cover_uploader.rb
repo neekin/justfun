@@ -63,7 +63,7 @@ class CoverUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [84, 84]
   end
   version :big do
-    process :resize_to_fit => [120, 120]
+    process :resize_to_fit => [900, 900]
   end
 
   #指定上传格式

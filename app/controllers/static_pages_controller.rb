@@ -11,6 +11,7 @@ class StaticPagesController < ApplicationController
 
   end
   def admin
+    render :layout => 'layouts/admin'
   end
 
 end

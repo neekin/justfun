@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tags
   resources :articletypes
   resources :articles
   resources :users
@@ -11,6 +10,9 @@ Rails.application.routes.draw do
 
   get  'admin'=>'static_pages#admin'
 
+  get '/admin/articles' => 'articles#index'
+  get '/admin/articles' => 'articles#index'
+  get '/admin/articles' => 'articles#index'
   get '/admin/articles' => 'articles#index'
 
   root 'static_pages#home'

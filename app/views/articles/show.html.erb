@@ -1,31 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>文章内容:</strong>
   <%= @article.content %>
 </p>
 
 <p>
-  <strong>Articletype:</strong>
+  <strong>文章类型:</strong>
   <%= @article.articletype_id %>
 </p>
 
 <p>
-  <strong>Subject:</strong>
+  <strong>副标题:</strong>
   <%= @article.subject %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>标题:</strong>
   <%= @article.title %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>作者:</strong>
   <%= @article.user.username %>
 </p>
 <p>
-  <strong>Tags:</strong>
+  <strong>标签:</strong>
   <% @article.tags.each do |tag| %>
        <p><%= tag.name %></p>
   <% end %>

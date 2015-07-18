@@ -10,27 +10,41 @@
       </ul>
     </div>
   <% end %>
+    <div class="field">
+      <%= f.label '标题' %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label '副标题' %><br>
+      <%= f.text_field :subject %>
+    </div>
 
+    <div class="field">
+      <%= f.label :articletype_id %><br>
+      <%=f.select :articletype_id, Articletype.all.map{ |c| [c.name, c.id] }%>
+    </div>
+
+    <div class="field">
+      <%= f.label :cover %><br>
+      <%= f.file_field :cover%>
+      <%= f.hidden_field :cover_cache %>
+    </div>
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
-  <div class="field">
-    <%= f.label :articletype_id %><br>
-    <%= f.number_field :articletype_id %>
-  </div>
-  <div class="field">
-    <%= f.label :subject %><br>
-    <%= f.text_field :subject %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
+
+
+
   <div class="field">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%=f.select :user_id, User.all.map{ |u| [u.username, u.id] }%>
   </div>
+    <div class="field">
+      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+      <%= f.text_field :tag_list %>
+    </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
