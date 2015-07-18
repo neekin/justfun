@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  resources :tags
+  resources :articletypes
+  resources :articles
+  resources :users
   get  'home'=> 'static_pages#home'
 
   get  'help'=>'static_pages#help'
 
   get  'about'=>'static_pages#about'
+
+  get  'admin'=>'static_pages#admin'
+
+  get '/admin/articles' => 'articles#index'
 
   root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

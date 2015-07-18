@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <% @articletype.articles.each do |article| %>
+     <p> <%=article.title %></p>
+  <% end%>
+</p>
+
+<%= link_to 'Edit', edit_articletype_path(@articletype) %> |
+<%= link_to 'Back', articletypes_path %>

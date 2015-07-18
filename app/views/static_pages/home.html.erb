@@ -8,11 +8,7 @@
         <div class="panel-heading">分类目录</div>
 
         <div class="list-group ">
-          <a  class="list-group-item text-center active">分类</a>
-          <a class="list-group-item text-center">分类</a>
-          <a class="list-group-item text-center">分类</a>
-          <a class="list-group-item text-center">分类</a>
-          <a class="list-group-item text-center">分类</a>
+          <%= render partial: 'articletypes/list' %>
         </div>
       </div>
       <div class="panel panel-default">
@@ -25,76 +21,19 @@
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">标签</div>
-        <div class="panel-body"></div>
+        <div class="panel-body">
+          <%= render partial: 'tags/list' %>
+
+        </div>
       </div>
     </div>
     <div class="col-sm-8 col-md-9 col-xs-12">
       <div class="panel panel-default">
         <div class="panel-heading">文章列表</div>
         <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-12 col-md-12 col-xs-12">
-              <div class="thumbnail">
-                <img src="img/1352353198470.jpg" alt="..." class="">
-
-                <div class="caption">
-                  <h3>Thumbnail label
-                    <small>Secondary text</small>
-                  </h3>
-                  <p>...</p>
-
-                  <p class="text-right"><a href="#" class="btn btn-primary" role="button">阅读全部图文</a></p>
-                </div>
-                <div class="panel-footer">
-
-
-                </div>
-              </div>
-
-              <div class="thumbnail">
-                <div class="caption">
-                  <h3>Thumbnail label
-                    <small>Secondary text</small>
-                  </h3>
-                  <p>...</p>
-
-                  <p class="text-right"><a href="#" class="btn btn-primary" role="button">阅读全部图文</a></p>
-                </div>
-              </div>
-              <div class="thumbnail">
-                <div class="caption">
-                  <h3>Thumbnail label
-                    <small>Secondary text</small>
-                  </h3>
-                  <p>...</p>
-
-                  <p class="text-right"><a href="#" class="btn btn-primary" role="button">阅读全部图文</a></p>
-                </div>
-              </div>
-              <div class="thumbnail">
-                <div class="caption">
-                  <h3>Thumbnail label
-                    <small>Secondary text</small>
-                  </h3>
-                  <p>...</p>
-
-                  <p class="text-right"><a href="#" class="btn btn-primary" role="button">阅读全部图文</a></p>
-                </div>
-              </div>
-              <div class="thumbnail">
-                <div class="caption">
-                  <h3>Thumbnail label
-                    <small>Secondary text</small>
-                  </h3>
-                  <p>...</p>
-
-                  <p class="text-right"><a href="#" class="btn btn-primary" role="button">阅读全部图文</a></p>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          <%= render partial: 'articles/list' %>
         </div>
       </div>
     </div>
   </div>
+</div>

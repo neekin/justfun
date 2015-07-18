@@ -1,0 +1,9 @@
+<!--<a  class="list-group-item text-center active">分类</a>-->
+<!--<a class="list-group-item text-center">分类</a>-->
+<!--<a class="list-group-item text-center">分类</a>-->
+<!--<a class="list-group-item text-center">分类</a>-->
+<!--<a class="list-group-item text-center">分类</a>-->
+
+<% Articletype.all.each do |articletype| %>
+    <a class="list-group-item text-center" href="#"><%= articletype.name%></a>
+<% end %>
