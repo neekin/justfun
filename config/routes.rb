@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/admin/articles' => 'articles#index'
   get '/admin/articles' => 'articles#index'
 
+  post '/images/upload'  =>'images#upload'
   root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

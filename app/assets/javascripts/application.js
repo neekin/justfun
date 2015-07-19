@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require module
+//= require hotkeys
+//= require uploader
+//= require simditor
 //= require_tree .

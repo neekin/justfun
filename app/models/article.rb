@@ -5,7 +5,6 @@ class Article < ActiveRecord::Base
   belongs_to :user
   belongs_to :articletype
   mount_uploader :cover, CoverUploader
-
   def self.tagged_with(name)
     Tag.find_by_name!(name).articles
   end
