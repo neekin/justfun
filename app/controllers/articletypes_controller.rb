@@ -1,6 +1,6 @@
 class ArticletypesController < AdminController
   before_action :set_articletype, only: [:show, :edit, :update, :destroy]
-
+  before_action :login_required,only: [ :edit, :update, :destroy]
   # GET /articletypes
   # GET /articletypes.json
   def index

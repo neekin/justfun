@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :articletypes
   resources :articles
   resources :users
+
+  #静态页面
   get  'home'=> 'static_pages#home'
 
   get  'help'=>'static_pages#help'
@@ -10,11 +12,15 @@ Rails.application.routes.draw do
 
   get  'admin'=>'static_pages#admin'
 
-  get '/admin/articles' => 'articles#index'
-  get '/admin/articles' => 'articles#index'
-  get '/admin/articles' => 'articles#index'
+
   get '/admin/articles' => 'articles#index'
 
+  #用户路由
+  get 'sign' => 'users#new'
+  get 'login'=>'users#login'
+  post 'login'=>'users#create_login_session'
+  get 'logout' =>'users#logout'
+  #上传图片
   post '/images/upload'  =>'images#upload'
   root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

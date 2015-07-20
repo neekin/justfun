@@ -1,6 +1,7 @@
 class UsersController < AdminController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :login_required,only: [:update, :destroy,:index,:show]
+  layout :resolve_layout
   # GET /users
   # GET /users.json
   def index
@@ -109,4 +110,14 @@ class UsersController < AdminController
     def user_params
       params.require(:user).permit(:username, :password, :avatar, :auth_token, :email)
     end
+  def resolve_layout
+    case action_name
+      when "new", "create"
+        "application"
+      when "index"
+        "admin"
+      else
+        "application"
+    end
+  end
 end

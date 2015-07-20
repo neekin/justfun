@@ -1,6 +1,6 @@
 class ArticlesController < AdminController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :login_required,only: [ :edit, :update, :destroy,:create]
   # GET /articles
   # GET /articles.json
   def index
@@ -33,6 +33,7 @@ class ArticlesController < AdminController
       else
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity }
+
       end
     end
   end

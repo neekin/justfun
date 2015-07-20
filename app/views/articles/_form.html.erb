@@ -1,52 +1,40 @@
 <%= form_for(@article) do |f| %>
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-      <% @article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-    <div class="field">
+    <%= render 'shared/error_messages',target:@article%>
+    <div class="form-group">
       <%= f.label '标题' %><br>
-      <%= f.text_field :title %>
+      <%= f.text_field :title ,:class=>"form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label '副标题' %><br>
-      <%= f.text_field :subject %>
+      <%= f.text_field :subject,:class=>"form-control" %>
     </div>
 
-    <div class="field">
-      <%= f.label :articletype_id %><br>
-      <%=f.select :articletype_id, Articletype.all.map{ |c| [c.name, c.id] }%>
+    <div class="form-group">
+      <%= f.label '文章类型' %><br>
+      <%=f.select :articletype,Articletype.all.map{ |c| [c.name, c.id] },{},{:class=>"combobox form-control"}%>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">添加文章类型</button>
     </div>
 
-    <div class="field">
-      <%= f.label :cover %><br>
-      <%= f.file_field :cover%>
+    <div class="form-group">
+      <%= f.label '封面' %><br>
+      <%= f.file_field :cover,:class=>"form-control"%>
       <%= f.hidden_field :cover_cache %>
     </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content ,{id:"editor"} %>
+  <div class="form-group">
+    <%= f.label '正文' %><br>
+    <%= f.text_area :content ,{id:"editor",class:'form-control'} %>
   </div>
-
-
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%=f.select :user_id, User.all.map{ |u| [u.username, u.id] }%>
+  <div class="form-group">
+    <%= f.label '作者' %><br>
+    <%=f.select :user_id, User.all.map{ |u| [u.username, u.id] },{},{:class=>"form-control"} %>
   </div>
-    <div class="field">
-      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-      <%= f.text_field :tag_list %>
+    <div class="form-group">
+      <%= f.label :tag_list, "标签" %><br />
+      <%= f.text_field :tag_list ,:class=>"form-control"%>
     </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-

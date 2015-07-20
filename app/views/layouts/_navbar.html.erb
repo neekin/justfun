@@ -16,8 +16,17 @@
         <li class="<%= 'active' if params[:action] == 'help' %>"><%= link_to "Help", help_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Log in", '#' %></li>
-        <li><%= link_to "Sign", '#' %></li>
+        <% if !current_user %>
+            <% if User.count == 1 %>
+
+            <% else %>
+                <li><%= link_to "Log in", login_path %></li>
+                <li><%= link_to "Sign", sign_path %></li>
+            <% end %>
+        <% else %>
+            <li><%= link_to "NeeKin", '#' %></li>
+            <li><%= link_to "Logout", logout_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

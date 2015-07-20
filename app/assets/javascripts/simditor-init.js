@@ -17,4 +17,7 @@
             },
             pasteImage:true
         });
-    })
+        $('.combobox').combobox();
+    });
+
+
