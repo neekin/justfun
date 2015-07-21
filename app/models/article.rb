@@ -9,7 +9,9 @@ class Article < ActiveRecord::Base
   has_many :tags, :through => :taggings
   belongs_to :user
   belongs_to :articletype
+
   mount_uploader :cover, CoverUploader
+
   def self.tagged_with(name)
     Tag.find_by_name!(name).articles
   end
@@ -21,9 +23,11 @@ class Article < ActiveRecord::Base
   end
 
   def tag_list=(names)
-    self.tag_list.remove(tag_list)
     self.tags = names.split(",").uniq.map do |n|
       Tag.where(name: n.strip).first_or_create!
     end
+  end
+  def articletype=(name)
+    self.articletype_id = Articletype.where(name:name).first_or_create!.id
   end
 end

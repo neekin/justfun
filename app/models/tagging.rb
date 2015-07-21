@@ -1,5 +1,5 @@
 class Tagging < ActiveRecord::Base
   belongs_to :article
   belongs_to :tag
-  validates :article_id , :presence  => true , :uniqueness => {:scope => :tag_id}
+  validates_uniqueness_of :article_id, :scope => :tag_id
 end
