@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get  'admin'=>'static_pages#admin'
 
-
+  get 'tags/:tag',to: 'articles#index',as: :tag
   get '/admin/articles' => 'articles#index'
 
   #用户路由

@@ -4,7 +4,12 @@ class ArticlesController < AdminController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:tag]
+      @articles =Article.tagged_with(params[:tag])
+    else
+      @articles = Article.all
+    end
+
   end
 
   # GET /articles/1
@@ -33,7 +38,6 @@ class ArticlesController < AdminController
       else
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity }
-
       end
     end
   end

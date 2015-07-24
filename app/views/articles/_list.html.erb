@@ -16,10 +16,7 @@
             <p class="text-right"><a href="#" class="btn btn-primary" role="button">阅读全部</a></p>
           </div>
           <div class="panel-footer">
-            <% article.tags.each do |tag| %>
-                <a href=""><%=tag.name%></a>
-            <% end%>
-
+            TAGS:  <%= raw article.tags.map(&:name).map{|t| link_to t,tag_path(t)}.join(", ") %>
           </div>
         </div>
 
