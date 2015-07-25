@@ -26,7 +26,7 @@
         <td><%= article.content %></td>
         <td><%= article.user.username %></td>
         <td><%= article.articletype.name %></td>
-        <td><%= image_tag article.cover_url(:small) || 'no' if article.cover %> </td>
+        <td><%= image_tag article.cover_url(:small) || 'no' if article.cover? %> </td>
         <td><%= article.tag_list %></td>
         <td><%= link_to '预览', article %></td>
         <td><%= link_to '编辑', edit_article_path(article) %></td>

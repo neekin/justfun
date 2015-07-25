@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'tags/:tag',to: 'articles#index',as: :tag
   get '/admin/articles' => 'articles#index'
 
+
   #用户路由
   get 'sign' => 'users#new'
   get 'login'=>'users#login'
