@@ -9,7 +9,6 @@ class ArticlesController < AdminController
     else
       @articles = Article.all
     end
-
   end
 
   # GET /articles/1
