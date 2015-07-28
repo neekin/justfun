@@ -1,4 +1,4 @@
-class ArticletypesController < AdminController
+class ArticletypesController < ApplicationController
   before_action :set_articletype, only: [:show, :edit, :update, :destroy]
   before_action :login_required,only: [ :edit, :update, :destroy]
   # GET /articletypes

@@ -1,4 +1,4 @@
-class TagsController < AdminController
+class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /tags
